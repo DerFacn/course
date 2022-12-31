@@ -8,9 +8,11 @@ class UserForm(forms.Form):
     email = forms.CharField(required=True)
 
 class SignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
-    last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
-    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+    username = forms.CharField(label="Логін", max_length=30, required=True, error_messages={'required': "Це поле обов'язкове!"})
+    first_name = forms.CharField(label="Ім'я", max_length=30, required=True, error_messages={'required': "Це поле обов'язкове!"})
+    last_name = forms.CharField(label="Прізвище", max_length=30, required=True, error_messages={'required': "Це поле обов'язкове!"})
+    email = forms.EmailField(label="Електронна адреса", max_length=254,required=True, error_messages={'required': "Це поле обов'язкове!"})
+
 
     class Meta:
         model = User

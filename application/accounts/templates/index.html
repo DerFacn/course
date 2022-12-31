@@ -5,15 +5,15 @@
     <title>Index</title>
 </head>
 <body>
-<h1>Hello, World</h1>
+<h1>Hello, Biden!</h1>
 
 {% if user.is_authenticated %}
 <p style="font-size:2vw;">Welcome, {{ user.username }}</p><br>
-<a href="{% url 'logout' %}">Log Out</a>
+<a href="{% url 'logout' %}" style="font-size:2vw;">Log Out</a>
 {% else %}
-Not logined. For checking table of information you must be logined<br>
-<a href="{% url 'login' %}">Log In</a><br>
-<a href="/accounts/signup/">Sign Up</a>
+<p style="font-size:2vw;">Not logined. For checking table of information you must be logined</p><br>
+<a href="{% url 'login' %}" style="font-size:2vw;">Log In</a><br>
+<a href="/accounts/signup/" style="font-size:2vw;">Sign Up</a>
 {% endif %}
 
 <!--

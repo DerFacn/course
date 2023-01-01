@@ -16,9 +16,3 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )
-
-class SellForm(forms.Form):
-    product_phone = forms.CharField(max_length=20, required=True)
-    product_productname = forms.CharField(max_length=100, required=True)
-    product_description = forms.CharField(max_length=500)
-    product_media = forms.FileField(upload_to="uploads/")

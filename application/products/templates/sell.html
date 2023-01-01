@@ -1,0 +1,7 @@
+<h1>Products</h1>
+
+<form action="/products/created/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Надіслати</button>
+</form>

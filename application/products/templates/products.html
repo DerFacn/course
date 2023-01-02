@@ -1,2 +1,58 @@
-<h1>Парсинг товарів не налаштовано, але ви можете лишити форму на продаж вже зараз</h1><br>
-<a href="sell/">Створити форму на продаж</a>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <style>
+   table {
+    width: 100%; /* Ширина таблицы */
+    border-collapse: collapse; /*  Убираем двойные линии между ячейками */
+   }
+   td, th {
+    padding: 4px; /* Поля в ячейках */
+    border: 1px solid #000080; /* Граница между ячейками */
+   }
+   th {
+    background: #000080; /* Цвет фона строки заголовка */
+    color: #ffe; /* Цвет текста */
+    text-align: left; /* Выравнивание по левому краю */
+    font-family: Arial, Helvetica, sans-serif; /* Выбор гарнитуры */
+    font-size: 0.9em; /* Размер текста */
+   }
+  </style>
+</head>
+<body>
+
+<h1>Оголошення </h1><a href="sell/">Створити нове оголошення</a>
+{% if product_list %}
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Час створення</th>
+        <th>Профіль продавця</th>
+        <th>Ім'я продавця</th>
+        <th>Прізвище продавця</th>
+        <th>Телефон продавця</th>
+        <th>Електронна пошта продавця</th>
+        <th>Назва оголошення</th>
+        <th>Опис</th>
+        <th>Медіа</th>
+    </tr>
+    {% for object in product_list %}
+    <tr>
+        <td>{{ object.id }}</td>
+        <td>{{ object.product_dt }}</td>
+        <td>{{ object.product_username }}</td>
+        <td>{{ object.product_name }}</td>
+        <td>{{ object.product_lastname }}</td>
+        <td>{{ object.order_phone }}</td>
+        <td>{{ object.product_email }}</td>
+        <td>{{ object.product_productname }}</td>
+        <td>{{ object.product_description }}</td>
+        <td>{{ object.product_media }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+Таблиця наразі пуста. Заповніть заявку вище.
+{% endif %}
+</body>
+</html>

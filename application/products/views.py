@@ -4,7 +4,8 @@ from .models import Product
 
 # Create your views here.
 def products(request):
-    return render(request, "products.html")
+    product_list = Product.objects.all()
+    return render(request, "products.html", {"product_list": product_list})
 
 def sell(request):
     form = SellForm()

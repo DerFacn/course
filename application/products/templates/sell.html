@@ -1,6 +1,6 @@
 <h1>Products</h1>
 
-<form action="/products/created/" method="post">
+<form action="/products/created/" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Надіслати</button>

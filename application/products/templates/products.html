@@ -43,11 +43,11 @@
         <td>{{ object.product_username }}</td>
         <td>{{ object.product_name }}</td>
         <td>{{ object.product_lastname }}</td>
-        <td>{{ object.order_phone }}</td>
+        <td>{{ object.product_phone }}</td>
         <td>{{ object.product_email }}</td>
         <td>{{ object.product_productname }}</td>
         <td>{{ object.product_description }}</td>
-        <td>{{ object.product_media }}</td>
+        <td><a href="{{object.product_media.url }}"><img src="{{object.product_media.url }}" alt="connect" width="150" height="150"/></a></td>
     </tr>
     {% endfor %}
 </table>

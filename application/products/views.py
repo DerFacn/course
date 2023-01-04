@@ -8,7 +8,7 @@ def products(request):
     return render(request, "products.html", {"product_list": product_list})
 
 def sell(request):
-    form = SellForm()
+    form = SellForm(request.POST, request.FILES)
     return render(request, "sell.html", {"form": form})
 
 def created(request):
@@ -19,8 +19,10 @@ def created(request):
     phone = request.POST["product_phone"]
     productname = request.POST["product_productname"]
     description = request.POST["product_description"]
-    media = request.POST["product_media"]
-    product = Product(product_phone = phone, product_productname = productname, product_username = product_username, product_name = name, product_lastname = lastname, product_email = email,
+    media = request.FILES["product_media"]
+    product = Product(product_phone = phone, product_productname = productname,
+                      product_username = product_username, product_name = name,
+                      product_lastname = lastname, product_email = email,
                       product_description = description, product_media = media)
     product.save()
     return render(request, "created.html")

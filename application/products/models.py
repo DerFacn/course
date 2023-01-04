@@ -10,7 +10,7 @@ class Product(models.Model):
     product_email = models.CharField(max_length=254, verbose_name="Електронна пошта продавця")
     product_productname = models.CharField(max_length=100, verbose_name="Назва товару")
     product_description = models.CharField(max_length=500, verbose_name="Опис товару")
-    product_media = models.FileField(upload_to="uploads/", verbose_name="Фотографії товару")
+    product_media = models.ImageField(upload_to="images/", verbose_name="Фотографії товару")
 
     def __str__(self):
         return self.product_productname

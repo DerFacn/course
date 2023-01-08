@@ -2,11 +2,6 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-class UserForm(forms.Form):
-    username = forms.CharField(required=True)
-    password = forms.CharField(required=True)
-    email = forms.CharField(required=True)
-
 class SignUpForm(UserCreationForm):
     username = forms.CharField(label="Логін", max_length=30, required=True, error_messages={'required': "Це поле обов'язкове!"})
     first_name = forms.CharField(label="Ім'я", max_length=30, required=True, error_messages={'required': "Це поле обов'язкове!"})

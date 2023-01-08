@@ -1,0 +1,56 @@
+<form method="get">
+    <input name="current" required="required"/>
+    <button type="submit">Search</button>
+</form>
+
+<style>
+    text {
+        color: blue;
+        font-size: 20px;
+    }
+</style>
+{% if name %}
+    {% for user in users %}
+        {% if name == user.username %}
+            <h1 style="color:green;">User Found:</h1>
+            <text> Username:</text>{{ user.username }}<br>
+            <text>First Name:</text>{{ user.first_name }}<br>
+            <text> Last Name:</text>{{ user.last_name }}<br>
+            <text> Email:</text>{{ user.email }}<br>
+            <h1 style="color:green;">Products:</h1>
+
+            {% for product in products %}
+                {% if product.product_username == name %}
+                    <table border="1">
+                        <tr>
+                            <th>Id</th>
+                            <th>Час створення</th>
+                            <th>Профіль продавця</th>
+                            <th>Ім'я продавця</th>
+                            <th>Прізвище продавця</th>
+                            <th>Телефон продавця</th>
+                            <th>Електронна пошта продавця</th>
+                            <th>Назва оголошення</th>
+                            <th>Опис</th>
+                            <th>Медіа</th>
+                        </tr>
+                        <tr>
+                            <td>{{ product.id }}</td>
+                            <td>{{ product.product_dt }}</td>
+                            <td>{{ product.product_username }}</td>
+                            <td>{{ product.product_name }}</td>
+                            <td>{{ product.product_lastname }}</td>
+                            <td>{{ product.product_phone }}</td>
+                            <td>{{ product.product_email }}</td>
+                            <td>{{ product.product_productname }}</td>
+                            <td>{% if product.product_description %} {{ oproduct.product_description }} {% else %} Опис відсутній {% endif %}</td>
+                            <td><a href="{{product.product_media.url }}"><img src="{{product.product_media.url }}" alt="connect" width="150" height="150"/></a></td>
+                        </tr>
+                    </table>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+{% else %}
+User does not exist. Please, check username again correctly
+{% endif %}

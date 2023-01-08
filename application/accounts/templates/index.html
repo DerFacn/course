@@ -8,7 +8,7 @@
 <h1>Hello, Biden!</h1>
 
 {% if user.is_authenticated %}
-<p style="font-size:2vw;">Вітаємо Вас, {{ user.username }}!</p><br>
+<p style="font-size:2vw;">Вітаємо Вас, {{ user.username }}!</p>
 <p style="font-size:2vw;"><a href="products/">Оголошення</a></p><br>
 <a href="{% url 'logout' %}" style="font-size:2vw;">Вийти з акаунту</a>
 {% else %}
@@ -17,12 +17,5 @@
 <a href="/accounts/signup/" style="font-size:2vw;">Створити новий акаунт</a>
 {% endif %}
 
-<!--
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
-</form>
--->
 </body>
 </html>

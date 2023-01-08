@@ -1,23 +1,27 @@
-from django.shortcuts import render
-from .forms import UserForm, SignUpForm
-from django.contrib.auth import login, authenticate
+from .forms import SignUpForm
 from django.shortcuts import render, redirect
 from .forms import SignUpForm
+from django.contrib.auth.models import User
+from products.models import Product
 
 # Create your views here.
 def index(request):
-    form = UserForm()
-    return render(request, "index.html", {"form": form})
+    return render(request, "index.html")
+
+def profiles(request):
+    users = User.objects.all()
+    products = Product.objects.all()
+    try:
+        name = request.GET["current"]
+    except:
+        name = None
+    return render(request, "profiles.html", {"users":users, "name":name, "products": products})
 
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            #user = authenticate(username=username, password=raw_password)
-            #login(request, user)
             return redirect('/accounts/login/')
     else:
         form = SignUpForm()

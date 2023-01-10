@@ -40,7 +40,7 @@
     <tr>
         <td>{{ object.id }}</td>
         <td>{{ object.product_dt }}</td>
-        <td>{{ object.product_username }}</td>
+        <td><a href="/accounts/?current={{ object.product_username }}">{{ object.product_username }}</a></td>
         <td>{{ object.product_name }}</td>
         <td>{{ object.product_lastname }}</td>
         <td>{{ object.product_phone }}</td>

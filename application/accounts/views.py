@@ -6,7 +6,7 @@ from products.models import Product
 
 # Create your views here.
 def index(request):
-    return render(request, "index.html")
+    return render(request, "accounts/index.html")
 
 def profiles(request):
     users = User.objects.all()
@@ -15,7 +15,7 @@ def profiles(request):
         name = request.GET["current"]
     except:
         name = None
-    return render(request, "profiles.html", {"users":users, "name":name, "products": products})
+    return render(request, "accounts/profiles.html", {"users":users, "name":name, "products": products})
 
 def signup(request):
     if request.method == 'POST':

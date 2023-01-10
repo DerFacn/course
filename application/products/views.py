@@ -5,11 +5,11 @@ from .models import Product
 # Create your views here.
 def products(request):
     product_list = Product.objects.all()
-    return render(request, "products.html", {"product_list": product_list})
+    return render(request, "products/products.html", {"product_list": product_list})
 
 def sell(request):
     form = SellForm(request.POST, request.FILES)
-    return render(request, "sell.html", {"form": form})
+    return render(request, "products/sell.html", {"form": form})
 
 def created(request):
     product_username = request.user
@@ -25,4 +25,4 @@ def created(request):
                       product_lastname = lastname, product_email = email,
                       product_description = description, product_media = media)
     product.save()
-    return render(request, "created.html")
+    return render(request, "products/created.html")

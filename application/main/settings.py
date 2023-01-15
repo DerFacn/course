@@ -26,7 +26,7 @@ SECRET_KEY = "aaa"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.2.154", "127.0.0.1"]
+ALLOWED_HOSTS = ["192.168.2.154", "127.0.0.1", "derfacn.pythonanywhere.com"]
 
 
 # Application definition
@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "accounts",
-    "products",
+    "accounts.apps.AccountsConfig",
+    "products.apps.ProductsConfig",
 ]
 
 MIDDLEWARE = [

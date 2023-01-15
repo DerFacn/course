@@ -1,55 +1,93 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-	background: #e0e0e1;
+	background: #dfe7e9;
+
 }
+
+* {
+	font-family: 'Nunito', sans-serif;
+}
+
 .form-control {
-	font-size: 16px;
-
-}
-.form-control:focus {
-	border-color: #fff;
-}
-.form-control, .btn {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-left: 50px;
+	padding-right: 50px;
+	font-family: 'Nunito', sans-serif;
 	border-radius: 50px;
-	outline: none !important;
-}
-.login-form {
-
-	width: 400px;
-	margin: 0 auto;
-	padding: 30px 0;
-}
-.login-form form {
-	border-radius: 50px;
-	margin-bottom: 20px;
 	background: #85c1e9;
+	width: 400px;
+	height: 266px;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-	padding: 40px 50px;
-	margin-top: 50px;
-}
-.login-form .btn {
-	font-size: 18px;
-	line-height: 26px;
-	font-weight: bold;
-	text-align: center;
 }
 
-.login-form .btn {
+input[type="password"],
+input[type=text]{
 	font-size: 18px;
-	line-height: 26px;
-	font-weight: bold;
-	text-align: center;
+	margin-bottom: 16px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 0.8px solid #e0e0e1;
+    width: 300px;
+    height: 38px;
+    padding-left: 10px;
 }
 
-.btn-color {
+input[type="password"],
+input[type="text"]:focus {
+	color: black;
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.btn {
+	font-size: 18px;
+	border-radius: 22px;
 	border-color: #6495ed;
 	background-color: #6495ed;
+	border: 0.8px solid #6495ed;
+	width: 300px;
+    height: 44px;
+	font-weight: bolder;
+	color: white;
+	margin-bottom: 16px;
 }
 
-.btn-color:hover {
+.btn:hover {
 	border-color: #ccccff;
 	background-color: #ccccff;
 }
 
-.login-form a {
-	color: #fff;
+.btn:active {
+	border-color: blue;
+	background-color: blue;
 }
+
+.form-footer {
+	padding: 3px;
+	margin-left: 13px;
+}
+
+span {
+	color: grey;
+}
+
+.form-footer a {
+	color: white;
+	text-decoration: none;
+}
+
+.form-footer a:hover {
+	text-decoration: underline;
+}
+

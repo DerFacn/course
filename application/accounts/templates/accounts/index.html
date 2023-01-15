@@ -4,15 +4,5 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
-<p style="font-size:2vw;">Вітаємо Вас, {{ user.username }}!</p>
-<p style="font-size:2vw;"><a href="accounts/?current={{ user.username }}">Переглянути особистий профіль</a></p>
-<p style="font-size:2vw;"><a href="products/">Оголошення</a></p>
-<a href="{% url 'logout' %}" style="font-size:2vw;">Вийти з акаунту</a>
-{% else %}
-<p style="font-size:2vw;">Ви не ввійшли в акаунт. Для створення оголошення увійдіть в існуючий акаунт або створіть новий</p><br>
-<a href="{% url 'login' %}" style="font-size:2vw;">Вхід</a><br>
-<a href="/accounts/signup/" style="font-size:2vw;">Створити новий акаунт</a>
-{% endif %}
 
 {% endblock %}

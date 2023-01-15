@@ -2,12 +2,23 @@
 <html lang="eu">
 <head>
   {% load static %}
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-  <link rel="stylesheet" href="{% static 'style/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'style/header_style.css' %}">
 </head>
 <body>
 {% block header %}
-<h1>derfacn shop</h1>
+<div class="header">
+  <a href="/" class="logo">SHOP</a>
+  {% if user.is_authenticated %}
+  <a href="{% url 'logout' %}" class="right"><button class="button">Log Out</button></a>
+    <a href="/accounts/?current={{ user.username }}" class="right"><button class="button">{{ user.username}}</button></a>
+    <a href="/accounts/"><button class="button">Search..</button></a>
+    <a href="/products"><button class="button">Products</button></a>
+{% else %}
+    <a href="{% url 'login' %}" class="right"><button class="button">Log In</button></a>
+    <a href="/accounts/signup/" class="right"><button class="button">Sign Up</button></a>
+{% endif %}
+</div>
 {% endblock %}
 </body>
 </html>

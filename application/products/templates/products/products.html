@@ -1,7 +1,9 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <style>
+{% include 'base/base.html' %}
+{% include 'base/header.html' %}
+{% block header %}{% endblock %}
+
+{% block content %}
+<style>
    table {
     width: 100%; /* Ширина таблицы */
     border-collapse: collapse; /*  Убираем двойные линии между ячейками */
@@ -18,8 +20,7 @@
     font-size: 0.9em; /* Размер текста */
    }
   </style>
-</head>
-<body>
+
 
 <h1>Оголошення </h1><a href="sell/">Створити нове оголошення</a>
 {% if product_list %}
@@ -54,5 +55,6 @@
 {% else %}
 Таблиця наразі пуста. Заповніть заявку вище.
 {% endif %}
-</body>
-</html>
+
+
+{% endblock %}

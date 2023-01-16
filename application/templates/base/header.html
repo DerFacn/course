@@ -8,7 +8,7 @@
 <body>
 {% block header %}
 <div class="header">
-  <a href="/" class="logo">SHOP</a>
+  <a href="/" class="logo" style="font-weight:1000;">SHOP</a>
   {% if user.is_authenticated %}
   <a href="{% url 'logout' %}" class="right"><button class="button">Log Out</button></a>
     <a href="/accounts/?current={{ user.username }}" class="right"><button class="button">{{ user.username}}</button></a>
